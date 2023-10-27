@@ -6,7 +6,7 @@ LiquidCrystal lcd(9, 8, 4, 5, 6, 7);
 
 int lcd_setup_time = 1000;
 
-String str = "Res Calculator! ";
+String str = "Resistance Meter ";
 
 
 int volt_1023;
