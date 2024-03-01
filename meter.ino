@@ -57,11 +57,27 @@ void loop() {
 
   lcd.setCursor(0, 1); // Set the cursor to the second row of the LCD
 
-  lcd.print("V:");
-  lcd.print(volt_real, 2); // Display the voltage on the LCD with 2 decimal places
-  lcd.print(" R:");
-  lcd.print(resistance);
 
+  if(resistance > 1000){  
+    double _resistance = resistance / 1000.0;
+    lcd.print("V:");
+    lcd.print(volt_real, 2); // Display the voltage on the LCD with 2 decimal places
+    lcd.print(" R:");
+    lcd.print(_resistance,2);
+    lcd.print("k");
+    lcd.setCursor(14,1);
+    lcd.print("     ");
+  }
+  else{
+    lcd.print("V:");
+    lcd.print(volt_real, 2); // Display the voltage on the LCD with 2 decimal places
+    lcd.print(" R:");
+    lcd.print(resistance);
+    lcd.setCursor(12,1);
+    lcd.print("     ");
+  }
+
+  
   delay(500); // Delay for readability, adjust as needed
   
 }
